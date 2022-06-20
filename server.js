@@ -6,7 +6,7 @@ const fbaccount = require('./fbaccount');
 
 mongoose.connect('mongodb://127.0.0.1:27017/accountsdb', () => { console.log('connected') } )
 
-app.listen(3000)
+app.listen(process.env.PORT || 5000)
 app.use(express.json()); 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static('public')); 
